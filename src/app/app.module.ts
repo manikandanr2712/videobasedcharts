@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AmChartsModule, AmChartsService } from '@amcharts/amcharts3-angular';
+import { NewComponent } from './new/new.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    AmChartsModule
   ],
-  providers: [],
+  providers: [
+    AmChartsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

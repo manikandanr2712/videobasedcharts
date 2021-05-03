@@ -28,9 +28,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [              
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/amstock3/amcharts/amcharts.js",                
+              "node_modules/amstock3/amcharts/amstock.js",                           
+              "node_modules/amstock3/amcharts/serial.js",        
+              "node_modules/amstock3/amcharts/themes/light.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +131,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rate"
+    }
+  },
+  "defaultProject": "rate",
+  "cli": {
+    "analytics": "27905562-0f37-4916-ac30-45c056c2b580"
+  }
 }

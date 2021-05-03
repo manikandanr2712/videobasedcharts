@@ -1,0 +1,79 @@
+<button type="button" class="btn-success" data-toggle="modal" data-target="#mani">
+    Mani
+</button>
+
+<!--Modal-->
+<div class="modal fade" id="mani" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Medication</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="col-md-12 row">
+                        <div class="col-md-4 border">
+                            <ul>
+                                <li *ngFor="let data of medicines" (click)="mani(data)">
+                                    <span class="bottom">{{data.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card bg">
+                                <b>{{selected.name}}</b>
+                            </div>
+                            <div class="">
+                                <div class="d-flex">
+                                1
+                                <div class="col-md-12 row ">
+                                    <div class=" col-md-4 yacaphen border">
+                                        yacaphen
+                                    </div>
+                                    <div class=" col-md-4 yacaphen border">
+                                        Once a day
+                                    </div>
+                                    <div class=" col-md-4 yacaphen border">
+                                        1
+                                    </div>
+                                </div>                                
+                            </div>
+                            <br>
+                                <div class="d-flex">
+                                    2
+                                    <div class="col-md-12 row ">
+                                        
+                                        <form [formGroup]="man" class="d-flex">
+                                        <div class=" col-md-4 yacaphen border">
+                                            Medicine name :
+                                                <input type="text" formControlName="sath" required>
+                                            
+                                        </div>
+                                        <div class=" col-md-4 yacaphen border">
+                                            Frequency <input type="text" formControlName="frequency" required>
+                                        </div>
+                                        <div class=" col-md-4 yacaphen border">
+                                           
+                                            Duration <input type="text" formControlName="duration" required>
+                                        </div>
+                                        </form>
+                                        <br>
+                                        <div class="border col-md-12 p-2">
+                                            <input type="text" placeholder="Medicine Info">
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" [disabled]="man.invalid" (click)="add()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
